@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Best practices for IoT device security in industrial environments?",
+    "excerpt": "Looking for recommendations on securing IoT sensors and gateways in manufacturing...",
+    "content": "I am compiling a security checklist for deploying thousands of IoT sensors on a factory floor. Areas I am considering: secure boot, firmware signing, encrypted MQTT, network segmentation, anomaly detection, lifecycle patching.\n\nWould appreciate real-world experiences—especially pitfalls and preferred tooling. How do you balance cost vs security hardening?",
+    "category": "iot-solutions",
+    "author": "Rajesh Kumar",
+    "createdAt": 1762529069654,
+    "views": 165,
+    "replies": [
+      {
+        "id": 1,
+        "author": "Priya Sharma",
+        "message": "We mandate TLS with client certs, and quarantine any device that misses 2 update cycles.",
+        "createdAt": 1762534469654
+      },
+      {
+        "id": 2,
+        "author": "Security Team",
+        "message": "Add hardware root-of-trust for higher risk endpoints. Helps with secure attestation.",
+        "createdAt": 1762535669654
+      },
+      {
+        "id": 3,
+        "author": "Ravi",
+        "message": "Bahut Bhadiya",
+        "createdAt": 1762539949088
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Drone regulations for commercial use in India - Complete guide",
+    "excerpt": "Comprehensive discussion on DGCA regulations, licenses, and compliance requirements...",
+    "content": "Trying to consolidate DGCA regulatory requirements for BVLOS operations. Looking for recent updates after 2025 circular.\n\nQuestions: ideal licensing path, recommended flight logging stack, handling privacy concerns when operating near populated zones.",
+    "category": "drone-tech",
+    "author": "Priya Sharma",
+    "createdAt": 1762518269654,
+    "views": 343,
+    "replies": [
+      {
+        "id": 1,
+        "author": "Capt. Arun Verma",
+        "message": "Maintain geo-fencing + dynamic NOTAM ingestion for safer BVLOS routes.",
+        "createdAt": 1762533269654
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "ISO 27001 certification process - Experience sharing",
+    "excerpt": "Sharing our journey of getting ISO 27001 certified. Key challenges and solutions...",
+    "content": "We just completed Stage 2 audit. Biggest challenge was evidence tracking across distributed teams.\n\nWould love to hear automation tips—especially for continuous internal audits and dashboarding risk treatment progress.",
+    "category": "cybersecurity",
+    "author": "Amit Patel",
+    "createdAt": 1762449869654,
+    "views": 521,
+    "replies": []
+  },
+  {
+    "id": 4,
+    "title": "verrrrreeeeeee",
+    "excerpt": "bhiyglgyuu  vu u uh uy  v ut c nhvuh vutikhg bgkvh yugyug yu  gbykgjh bhjkvmhjhjl",
+    "content": "bhiyglgyuu  vu u uh uy  v ut c nhvuh vutikhg bgkvh yugyug yu  gbykgjh bhjkvmhjhjl",
+    "category": "cybersecurity",
+    "author": "Ravi",
+    "createdAt": 1762540248087,
+    "views": 2,
+    "replies": []
+  }
+]

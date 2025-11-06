@@ -1,0 +1,101 @@
+<%- include('partials/header') %>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Frequently Asked <span class="gradient-text">Questions</span></h1>
+        <p class="page-subtitle">Find Answers to Common Questions</p>
+        <p class="sanskrit-quote">"प्रश्नः ज्ञानस्य द्वारम्" - Questions are the gateway to knowledge</p>
+        <div class="breadcrumb">
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <span>/</span>
+            <span>FAQ</span>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-container">
+            <div class="faq-sidebar">
+                <h3>Categories</h3>
+                <ul class="faq-categories" role="tablist">
+                    <li class="active" role="tab" tabindex="0" aria-selected="true" data-category="general"><i class="fas fa-chevron-right"></i> General</li>
+                    <li role="tab" tabindex="0" aria-selected="false" data-category="services"><i class="fas fa-chevron-right"></i> Services</li>
+                    <li role="tab" tabindex="0" aria-selected="false" data-category="products"><i class="fas fa-chevron-right"></i> Products</li>
+                    <li role="tab" tabindex="0" aria-selected="false" data-category="support"><i class="fas fa-chevron-right"></i> Support</li>
+                    <li role="tab" tabindex="0" aria-selected="false" data-category="billing"><i class="fas fa-chevron-right"></i> Billing</li>
+                </ul>
+                <div class="faq-contact-box">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>Still have questions?</h4>
+                    <p>Our team is here to help</p>
+                    <a href="#contact" class="btn btn-sm btn-primary">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="faq-content">
+                <div class="faq-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for answers..." id="faqSearch">
+                </div>
+
+                <div class="faq-accordion" id="faqAccordion">
+                    <% faqs.forEach((faq, index) => { %>
+                    <div class="faq-item" data-category="<%= (faq.category || 'general').toLowerCase().replace(/[^a-z0-9]+/g,'-') %>">
+                        <div class="faq-question" data-index="<%= index %>">
+                            <h3><%= faq.question %></h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><%= faq.answer %></p>
+                        </div>
+                    </div>
+                    <% }); %>
+                    <div id="faqNoResults" class="hidden" style="padding:40px; text-align:center; background:#fff; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+                        <h3 style="margin-bottom:10px; color:var(--primary-color);">No matching answers</h3>
+                        <p style="color:#555;">Try adjusting your search or selecting a different category.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Help Resources -->
+<section class="help-resources-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Additional <span class="gradient-text">Resources</span></h2>
+        </div>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <i class="fas fa-book"></i>
+                <h3>Documentation</h3>
+                <p>Comprehensive guides and technical documentation</p>
+                <a href="#" class="resource-link">Browse Docs <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-video"></i>
+                <h3>Video Tutorials</h3>
+                <p>Step-by-step video guides and walkthroughs</p>
+                <a href="#" class="resource-link">Watch Videos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-comments"></i>
+                <h3>Community Forum</h3>
+                <p>Connect with other users and experts</p>
+                <a href="/community" class="resource-link">Join Forum <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Get immediate help from our support team</p>
+                <a href="#contact" class="resource-link">Get Support <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

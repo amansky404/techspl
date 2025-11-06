@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "The Future of Cybersecurity in India: Zero Trust Architecture",
+    "excerpt": "As cyber threats evolve, Indian enterprises are adopting Zero Trust security models. Learn how this paradigm shift is protecting critical infrastructure and sensitive data across government, banking, and healthcare sectors.",
+    "content": "Zero Trust Architecture represents a fundamental shift from traditional perimeter-based security. With the rise of remote work, cloud computing, and IoT devices, the conventional 'castle and moat' approach is no longer sufficient. Tech Sanrakshanam has successfully implemented Zero Trust frameworks for over 50 organizations, reducing security incidents by 85%. Our approach includes micro-segmentation, continuous authentication, least-privilege access, and real-time threat analytics powered by AI.",
+    "date": "2025-10-15",
+    "category": "Cybersecurity",
+    "tags": [
+      "Zero Trust",
+      "Security",
+      "Enterprise"
+    ],
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop",
+    "author": "Dr. Rajesh Kumar, Chief Security Architect",
+    "readTime": "8 min read"
+  },
+  {
+    "id": 2,
+    "title": "IoT Revolution: Building Smart Factories with Industry 4.0",
+    "excerpt": "Manufacturing in India is undergoing a digital transformation. Discover how IoT sensors, edge computing, and predictive analytics are creating intelligent factories that optimize production, reduce downtime, and improve quality.",
+    "content": "Industry 4.0 is reshaping Indian manufacturing with connected machines, real-time data analytics, and autonomous systems. Our IoT platform integrates 10,000+ sensors across factory floors, monitoring temperature, vibration, energy consumption, and production metrics. Predictive maintenance algorithms reduce unplanned downtime by 60%, while quality control systems detect defects with 99.2% accuracy. Edge computing ensures low-latency processing, while cloud integration provides enterprise-wide visibility.",
+    "date": "2025-10-20",
+    "category": "IoT",
+    "tags": [
+      "Industry 4.0",
+      "Manufacturing",
+      "Automation"
+    ],
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop",
+    "author": "Priya Sharma, IoT Solutions Lead",
+    "readTime": "10 min read"
+  },
+  {
+    "id": 3,
+    "title": "Drone Technology: Transforming Agriculture with Precision Farming",
+    "excerpt": "Indian farmers are leveraging drone technology for crop monitoring, precision spraying, and yield estimation. Explore how aerial intelligence is revolutionizing agriculture and boosting productivity by 40%.",
+    "content": "Drones equipped with multispectral cameras and AI-powered analytics are transforming Indian agriculture. Our agricultural drone solutions provide real-time crop health monitoring, detecting pest infestations, nutrient deficiencies, and water stress before visible symptoms appear. Precision spraying drones reduce pesticide usage by 50% while improving coverage. Topographic mapping helps farmers optimize irrigation and drainage. With DGCA-compliant operations and trained pilots, we've covered 2 million acres across 15 states.",
+    "date": "2025-10-25",
+    "category": "Drones",
+    "tags": [
+      "Agriculture",
+      "Precision Farming",
+      "AI"
+    ],
+    "image": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&h=400&fit=crop",
+    "author": "Capt. Arun Verma, Drone Operations Director",
+    "readTime": "7 min read"
+  },
+  {
+    "id": 4,
+    "title": "5G and Edge Computing: The Next Frontier for IoT",
+    "excerpt": "The convergence of 5G networks and edge computing is unlocking unprecedented possibilities for IoT applications. From autonomous vehicles to smart cities, understand how ultra-low latency is enabling real-time intelligence.",
+    "content": "5G technology combined with edge computing is revolutionizing IoT deployments across India. With latency reduced to under 10ms, applications requiring real-time processing are now viable. Our edge computing platform processes data locally on 5G-connected devices, enabling instant decision-making for autonomous drones, industrial robots, and smart traffic systems. We've deployed 200+ edge nodes across smart city projects, processing 50TB of data daily with 99.99% uptime.",
+    "date": "2025-10-28",
+    "category": "Technology",
+    "tags": [
+      "5G",
+      "Edge Computing",
+      "Innovation"
+    ],
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
+    "author": "Tech Sanrakshanam Innovation Lab",
+    "readTime": "12 min read"
+  },
+  {
+    "id": 5,
+    "title": "Cybersecurity for Critical Infrastructure: Protecting India's Power Grid",
+    "excerpt": "Critical infrastructure faces sophisticated cyber threats daily. Learn how Tech Sanrakshanam's security operations center monitors and protects power generation, transmission, and distribution systems nationwide.",
+    "content": "India's power grid serves 1.4 billion people and is a prime target for cyber attacks. Our 24/7 Security Operations Center (SOC) monitors critical infrastructure for 15 power utilities, detecting and neutralizing threats in real-time. Using AI-powered SIEM systems, we analyze millions of security events daily, identifying anomalies and potential attacks. Our incident response team has successfully prevented 300+ cyber attacks targeting SCADA systems, substations, and control centers.",
+    "date": "2025-11-01",
+    "category": "Cybersecurity",
+    "tags": [
+      "Critical Infrastructure",
+      "SOC",
+      "Energy"
+    ],
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop",
+    "author": "Neha Patel, SOC Manager",
+    "readTime": "9 min read"
+  },
+  {
+    "id": 6,
+    "title": "Blockchain for Supply Chain: Ensuring Transparency and Traceability",
+    "excerpt": "Blockchain technology is solving supply chain challenges in pharmaceuticals, agriculture, and manufacturing. Discover how distributed ledger technology ensures product authenticity and regulatory compliance.",
+    "content": "Supply chain transparency is critical for pharmaceutical integrity, food safety, and manufacturing compliance. Our blockchain-based platform tracks products from origin to consumer, creating an immutable record of every transaction. Smart contracts automate payments and compliance verification. We've implemented blockchain solutions for 20+ pharmaceutical companies, eliminating counterfeit drugs and ensuring cold chain compliance. The system tracks 5 million shipments annually with complete traceability.",
+    "date": "2025-11-05",
+    "category": "Blockchain",
+    "tags": [
+      "Supply Chain",
+      "Traceability",
+      "Pharma"
+    ],
+    "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=400&fit=crop",
+    "author": "Vikram Singh, Blockchain Architect",
+    "readTime": "11 min read"
+  }
+]

@@ -1,0 +1,109 @@
+<%- include('header') %>
+
+<div class="page-header">
+    <h1><i class="fas fa-box"></i> Products Management</h1>
+    <button class="btn btn-primary" onclick="showAddForm()">
+        <i class="fas fa-plus"></i> Add New Product
+    </button>
+</div>
+
+<!-- Add Product Form (Hidden by default) -->
+<div id="addForm" class="form-card" style="display: none;">
+    <h2><i class="fas fa-plus-circle"></i> <span id="formTitle">Add New Product</span></h2>
+    <form id="productForm" action="/admin/products/add" method="POST">
+        <input type="hidden" id="editIndex" name="editIndex" value="">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Product Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Category *</label>
+                <input type="text" id="category" name="category" placeholder="e.g., Security, IoT, Drones" required>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Description *</label>
+            <textarea id="description" name="description" rows="3" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Image URL *</label>
+            <input type="text" id="image" name="image" placeholder="https://example.com/image.jpg" required>
+            <small>Enter the full URL of the product image</small>
+        </div>
+        
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" id="price" name="price" placeholder="e.g., ₹2,50,000/year">
+        </div>
+        
+        <div class="form-group">
+            <label>Features (comma-separated)</label>
+            <input type="text" id="features" name="features" placeholder="Feature 1, Feature 2, Feature 3">
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-save"></i> <span id="submitBtn">Save Product</span>
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="hideAddForm()">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Products List -->
+<div class="data-table">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Features</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach((product, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td class="image-cell">
+                        <% if (product.image) { %>
+                            <img src="<%= product.image %>" alt="<%= product.name %>" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+                        <% } else { %>
+                            <span class="text-muted">No image</span>
+                        <% } %>
+                    </td>
+                    <td><strong><%= product.name %></strong></td>
+                    <td><span class="badge badge-info"><%= product.category %></span></td>
+                    <td><%= product.price || 'N/A' %></td>
+                    <td class="small-text"><%= product.features ? product.features.slice(0, 2).join(', ') + '...' : 'No features' %></td>
+                    <td>
+                        <button class="btn-icon btn-warning" 
+                                data-index="<%= index %>" 
+                                data-product='<%- JSON.stringify(product) %>'
+                                onclick="editProduct(this.dataset.index, JSON.parse(this.dataset.product))" 
+                                title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-icon btn-danger" 
+                                data-type="products" 
+                                data-index="<%= index %>"
+                                onclick="deleteItem(this.dataset.type, this.dataset.index)" 
+                                title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('footer') %>

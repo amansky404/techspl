@@ -1,0 +1,172 @@
+[
+  {
+    "name": "SanrakshakPro Enterprise Security Suite 111111",
+    "description": "Next-generation cybersecurity platform with AI-powered threat detection, next-gen firewall, endpoint protection, and zero-trust network access. Includes 24/7 SOC monitoring and incident response.",
+    "icon": "🛡️",
+    "category": "Security",
+    "price": "",
+    "features": [
+      "AI Threat Detection",
+      "Zero Trust Architecture",
+      "SIEM Integration",
+      "24/7 SOC",
+      "Compliance Reports",
+      "Incident Response"
+    ],
+    "specs": {
+      "users": "Unlimited",
+      "devices": "Up to 1000 endpoints",
+      "support": "24/7 Premium",
+      "updates": "Real-time threat intelligence"
+    },
+    "editIndex": "",
+    "image": "/images/32ef6f0d-774c-41ec-8c1e-0a4aea23f743.jpg"
+  },
+  {
+    "name": "IoTConnect Gateway - Industrial Series",
+    "description": "Ruggedized industrial IoT gateway supporting Modbus, OPC-UA, MQTT protocols. Features edge computing capabilities, 4G/5G connectivity, and operates in -40°C to +85°C temperature range.",
+    "icon": "🌐",
+    "category": "IoT",
+    "price": "₹45,000/unit",
+    "features": [
+      "Multi-Protocol Support",
+      "Edge Computing",
+      "5G Ready",
+      "Industrial Grade",
+      "Remote Management",
+      "Secure Boot"
+    ],
+    "specs": {
+      "connectivity": "4G/5G/Ethernet/WiFi",
+      "protocols": "MQTT, Modbus, OPC-UA, REST",
+      "storage": "64GB eMMC",
+      "certifications": "CE, FCC, IP67"
+    }
+  },
+  {
+    "name": "AeroGuard Surveillance Drone - Pro Series",
+    "description": "Professional-grade surveillance drone with 4K gimbal camera, 35-minute flight time, and AI-powered object tracking. DGCA Type Certified for commercial operations across India.",
+    "icon": "🚁",
+    "category": "Drones",
+    "price": "₹3,75,000/unit",
+    "features": [
+      "4K Camera",
+      "35 Min Flight Time",
+      "AI Tracking",
+      "Night Vision",
+      "Live Streaming",
+      "GPS RTK"
+    ],
+    "specs": {
+      "range": "10 km",
+      "payload": "2 kg",
+      "windResistance": "12 m/s",
+      "certifications": "DGCA Type Certified"
+    }
+  },
+  {
+    "name": "NetWatch Pro - Network Monitoring Platform",
+    "description": "Enterprise network monitoring and analytics software with real-time performance tracking, bandwidth analysis, automated alerts, and predictive failure detection using machine learning.",
+    "icon": "📊",
+    "category": "Networking",
+    "price": "₹1,20,000/year",
+    "features": [
+      "Real-time Monitoring",
+      "AI Analytics",
+      "Automated Alerts",
+      "Traffic Analysis",
+      "Performance Reports",
+      "Multi-site Support"
+    ],
+    "specs": {
+      "devices": "Unlimited monitoring",
+      "protocols": "SNMP, NetFlow, sFlow",
+      "retention": "1 year historical data",
+      "integration": "REST API, Webhooks"
+    }
+  },
+  {
+    "name": "SmartSense IoT Sensor Suite",
+    "description": "Comprehensive IoT sensor package including temperature, humidity, motion, air quality, and water leak sensors. Battery life up to 5 years with LoRaWAN connectivity.",
+    "icon": "📡",
+    "category": "IoT",
+    "price": "₹8,500/sensor",
+    "features": [
+      "Multi-sensor Kit",
+      "5 Year Battery",
+      "LoRaWAN",
+      "Cloud Dashboard",
+      "Instant Alerts",
+      "API Access"
+    ],
+    "specs": {
+      "connectivity": "LoRaWAN, NB-IoT",
+      "range": "Up to 15 km",
+      "battery": "5 years (replaceable)",
+      "certifications": "IP65 rated"
+    }
+  },
+  {
+    "name": "SecureEntry Access Control System",
+    "description": "Advanced biometric access control with facial recognition, fingerprint, RFID, and mobile app access. Supports 10,000+ users with cloud-based management and real-time attendance tracking.",
+    "icon": "🔐",
+    "category": "Security",
+    "price": "₹85,000/door",
+    "features": [
+      "Face Recognition",
+      "Fingerprint",
+      "RFID Cards",
+      "Mobile Access",
+      "Cloud Management",
+      "Attendance Tracking"
+    ],
+    "specs": {
+      "capacity": "10,000 users",
+      "recognition": "<1 second",
+      "accuracy": "99.7%",
+      "integration": "ERP, HRMS, Building Management"
+    }
+  },
+  {
+    "name": "AgroVision Agriculture Drone",
+    "description": "Specialized agricultural drone with multispectral camera for crop health monitoring, 15L spray tank for precision pesticide application, and AI-powered yield estimation software.",
+    "icon": "🌾",
+    "category": "Drones",
+    "price": "₹5,50,000/unit",
+    "features": [
+      "Multispectral Camera",
+      "15L Spray Tank",
+      "Crop Analysis AI",
+      "Auto Flight Planning",
+      "Yield Estimation",
+      "DGCA Compliant"
+    ],
+    "specs": {
+      "coverage": "1 acre/min spraying",
+      "flightTime": "25 minutes",
+      "tankCapacity": "15 liters",
+      "accuracy": "±10cm RTK GPS"
+    }
+  },
+  {
+    "name": "CloudGuard SIEM Platform",
+    "description": "Cloud-native Security Information and Event Management platform with AI-powered threat correlation, automated incident response, and compliance reporting for ISO 27001, PCI-DSS, and GDPR.",
+    "icon": "☁️",
+    "category": "Security",
+    "price": "₹3,00,000/year",
+    "features": [
+      "AI Threat Correlation",
+      "Automated Response",
+      "Compliance Dashboard",
+      "Log Management",
+      "Threat Intelligence",
+      "Forensics"
+    ],
+    "specs": {
+      "logCapacity": "1TB/day",
+      "retention": "1 year online + 3 year archive",
+      "compliance": "ISO 27001, PCI-DSS, HIPAA",
+      "integration": "200+ data sources"
+    }
+  }
+]

@@ -1,0 +1,176 @@
+<%- include('partials/header') %>
+
+<section class="page-header">
+  <div class="container">
+    <h1 class="page-title">Community <span class="gradient-text">Discussion</span></h1>
+    <p class="page-subtitle">Collaborate, Share & Learn</p>
+    <div class="breadcrumb">
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <span>/</span>
+      <a href="/community">Community</a>
+      <span>/</span>
+      <span><%= discussion.title %></span>
+    </div>
+  </div>
+</section>
+
+<section class="discussion-view-section">
+  <div class="container">
+    <div class="discussion-view-layout">
+      <div class="discussion-main">
+        <article class="discussion-full">
+          <header class="discussion-full-header">
+            <h2><%= discussion.title %></h2>
+            <div class="discussion-full-meta">
+              <span><i class="fas fa-user"></i> <%= discussion.author %></span>
+              <span><i class="fas fa-clock"></i> <%= new Date(discussion.createdAt).toLocaleString('en-IN', { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'}) %></span>
+              <span><i class="fas fa-tag"></i> <%= discussion.category.replace(/-/g,' ') %></span>
+              <span><i class="fas fa-eye"></i> <%= discussion.views %> views</span>
+            </div>
+          </header>
+          <div class="discussion-full-content">
+            <p style="white-space:pre-line; line-height:1.7; font-size:1rem; color:#444;"> <%= discussion.content %></p>
+          </div>
+        </article>
+
+        <section class="discussion-replies" id="repliesSection">
+          <h3>Replies (<span id="replyCount"><%= (discussion.replies||[]).length %></span>)</h3>
+          <div class="reply-list" id="replyList">
+            <% (discussion.replies || []).forEach(function(r){ %>
+              <div class="reply-item">
+                <div class="reply-header">
+                  <strong><i class="fas fa-user"></i> <%= r.author %></strong>
+                  <span class="reply-time"><i class="fas fa-clock"></i> <%= new Date(r.createdAt).toLocaleString('en-IN', { hour:'2-digit', minute:'2-digit'}) %></span>
+                </div>
+                <p class="reply-message"><%= r.message %></p>
+              </div>
+            <% }) %>
+          </div>
+        </section>
+
+        <section class="reply-form-section">
+          <h3>Add a Reply</h3>
+          <form id="replyForm" data-id="<%= discussion.id %>">
+            <div class="form-group">
+              <label><i class="fas fa-user"></i> Name</label>
+              <input type="text" name="author" placeholder="Your name (optional)">
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-comment"></i> Message *</label>
+              <textarea name="message" rows="5" required placeholder="Share your thoughts, solution, experience..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Post Reply
+            </button>
+          </form>
+        </section>
+      </div>
+
+      <aside class="discussion-side-panel">
+        <div class="side-box">
+          <h4>Quick Actions</h4>
+          <button class="btn btn-sm btn-outline" onclick="window.location.href='/community'">
+            <i class="fas fa-arrow-left"></i> Back to Discussions
+          </button>
+          <button class="btn btn-sm btn-outline" onclick="startNewDiscussion()">
+            <i class="fas fa-plus"></i> New Discussion
+          </button>
+        </div>
+        <div class="side-box">
+          <h4>Related Topics</h4>
+          <ul class="related-topics" id="relatedTopics"></ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+// Dynamically build related topics (same category, excluding current)
+// Simple endpoint not yet implemented: fallback to basic client filter from embedded discussions (optional)
+
+// Reply submission via fetch
+const replyForm = document.getElementById('replyForm');
+if (replyForm) {
+  replyForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = replyForm.getAttribute('data-id');
+    const formData = {
+      author: replyForm.author.value.trim(),
+      message: replyForm.message.value.trim()
+    };
+    if (!formData.message) return;
+    const btn = replyForm.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Posting...';
+    try {
+      const res = await fetch(`/community/discussion/${id}/reply`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      const result = await res.json();
+      if (result.success) {
+        const list = document.getElementById('replyList');
+        const newDiv = document.createElement('div');
+        newDiv.className = 'reply-item';
+        newDiv.innerHTML = `
+          <div class="reply-header">
+            <strong><i class="fas fa-user"></i> ${formData.author || 'Anonymous'}</strong>
+            <span class="reply-time"><i class="fas fa-clock"></i> just now</span>
+          </div>
+          <p class="reply-message"></p>`;
+        newDiv.querySelector('.reply-message').textContent = formData.message;
+        list.appendChild(newDiv);
+        const countEl = document.getElementById('replyCount');
+        countEl.textContent = parseInt(countEl.textContent) + 1;
+        replyForm.reset();
+      } else {
+        alert(result.message || 'Failed to post reply');
+      }
+    } catch (err) {
+      alert('Network error posting reply');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Post Reply';
+    }
+  });
+}
+
+function startNewDiscussion() {
+  window.location.href = '/community#new-discussion';
+  setTimeout(() => {
+    if (typeof openNewDiscussionModal === 'function') {
+      openNewDiscussionModal();
+    } else {
+      // Fallback: reload community page and try to open modal
+      window.location.href = '/community';
+    }
+  }, 100);
+}
+</script>
+
+<style>
+.discussion-view-layout { display:flex; gap:40px; align-items:flex-start; }
+.discussion-main { flex:1; }
+.discussion-full { background:#fff; padding:35px; border-radius:18px; box-shadow:0 6px 30px rgba(0,0,0,0.08); margin-bottom:40px; }
+.discussion-full-header h2 { margin:0 0 15px; font-size:30px; line-height:1.3; }
+.discussion-full-meta { display:flex; flex-wrap:wrap; gap:15px; font-size:0.85rem; color:#666; }
+.discussion-replies { background:#fff; padding:30px; border-radius:16px; box-shadow:0 4px 25px rgba(0,0,0,0.06); }
+.discussion-replies h3 { margin:0 0 20px; }
+.reply-item { border-bottom:1px solid #eee; padding:15px 0; }
+.reply-item:last-child { border-bottom:none; }
+.reply-header { display:flex; justify-content:space-between; font-size:0.85rem; color:#444; margin-bottom:6px; }
+.reply-message { margin:0; font-size:0.95rem; line-height:1.6; color:#333; }
+.reply-form-section { background:#fff; margin-top:35px; padding:30px; border-radius:16px; box-shadow:0 4px 25px rgba(0,0,0,0.05); }
+.reply-form-section h3 { margin:0 0 20px; }
+.discussion-side-panel { width:320px; display:flex; flex-direction:column; gap:25px; }
+.side-box { background:#fff; padding:25px; border-radius:16px; box-shadow:0 4px 18px rgba(0,0,0,0.05); }
+.related-topics { list-style:none; padding:0; margin:0; }
+.related-topics li { margin-bottom:10px; }
+.related-topics a { text-decoration:none; color:var(--primary-color); font-size:0.95rem; }
+.related-topics a:hover { text-decoration:underline; }
+@media (max-width: 992px){ .discussion-view-layout { flex-direction:column; } .discussion-side-panel { width:100%; } }
+</style>
+
+<%- include('partials/footer') %>

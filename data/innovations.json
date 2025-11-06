@@ -1,0 +1,134 @@
+[
+  {
+    "name": "SanrakshakAI - Next-Gen Threat Detection System",
+    "description": "Revolutionary AI/ML-based cybersecurity platform using deep learning neural networks to detect zero-day exploits and advanced persistent threats with 99.7% accuracy. The system analyzes 10 million security events per second, identifying anomalous patterns invisible to traditional SIEM solutions. Currently deployed in pilot phase across 5 enterprise customers.",
+    "status": "Active Research & Beta Testing",
+    "stage": "Phase 3 - Commercial Pilot",
+    "team": "15 AI researchers + 8 security experts",
+    "funding": "₹8 Crores (DRDO Partnership Grant)",
+    "timeline": "Commercial launch Q2 2026",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    "technologies": [
+      "Deep Learning",
+      "Neural Networks",
+      "Real-time Analytics",
+      "Behavioral Analysis"
+    ],
+    "achievements": [
+      "99.7% threat detection accuracy",
+      "10 million events/sec processing",
+      "0.5 second average response time",
+      "3 patents filed"
+    ]
+  },
+  {
+    "name": "Swarm Intelligence - Autonomous Drone Fleet",
+    "description": "Breakthrough swarm drone technology enabling 50+ drones to operate autonomously as coordinated fleet for large-area surveillance, search-and-rescue, and agricultural monitoring. AI-powered collision avoidance and intelligent task allocation. Successfully demonstrated 100-drone formation during defense trials covering 500 sq km area.",
+    "status": "Advanced Prototype",
+    "stage": "Phase 4 - Field Trials",
+    "team": "20 robotics engineers + 5 AI specialists",
+    "funding": "₹12 Crores (ISRO + Private Investment)",
+    "timeline": "Production ready Q4 2025",
+    "image": "https://images.unsplash.com/photo-1508614999368-9260051292e5?w=600&h=400&fit=crop",
+    "technologies": [
+      "Swarm AI",
+      "Autonomous Navigation",
+      "5G Communication",
+      "Computer Vision"
+    ],
+    "achievements": [
+      "100-drone simultaneous operation",
+      "500 sq km coverage in 2 hours",
+      "99% collision-free navigation",
+      "Selected for DRDO pilot program"
+    ]
+  },
+  {
+    "name": "EdgeMind - Industrial IoT Edge Computing Platform",
+    "description": "Ultra-low latency edge computing platform specifically designed for industrial IoT applications requiring real-time processing. Achieves <5ms response time with distributed AI inference at the edge. Deployed across 50+ manufacturing facilities processing 100TB industrial data daily. Features predictive maintenance, quality control, and energy optimization modules.",
+    "status": "Commercial Deployment",
+    "stage": "Phase 5 - Market Launch",
+    "team": "12 edge computing specialists + 8 IoT experts",
+    "funding": "₹6 Crores (Venture Capital)",
+    "timeline": "Currently available",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+    "technologies": [
+      "Edge AI",
+      "5G/LTE",
+      "Distributed Computing",
+      "Industrial Protocols"
+    ],
+    "achievements": [
+      "<5ms latency achieved",
+      "100TB/day data processing",
+      "50+ factories deployed",
+      "40% reduction in cloud costs"
+    ]
+  },
+  {
+    "name": "QuantumShield - Post-Quantum Cryptography",
+    "description": "Next-generation encryption system using lattice-based cryptography resistant to quantum computer attacks. Developed in collaboration with IIT Delhi and C-DAC Pune. Implements NIST-approved post-quantum algorithms (CRYSTALS-Kyber, CRYSTALS-Dilithium) for securing government communications, banking transactions, and defense systems against future quantum threats.",
+    "status": "Active Research",
+    "stage": "Phase 2 - Algorithm Optimization",
+    "team": "8 cryptography researchers + 4 mathematicians",
+    "funding": "₹5 Crores (DST Grant + IIT Partnership)",
+    "timeline": "Pilot deployment 2027",
+    "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop",
+    "technologies": [
+      "Lattice Cryptography",
+      "NIST PQC Standards",
+      "Hybrid Encryption",
+      "Key Exchange"
+    ],
+    "achievements": [
+      "NIST PQC compliant implementation",
+      "5x faster than competing solutions",
+      "2 research papers published",
+      "Government interest for deployment"
+    ]
+  },
+  {
+    "name": "BioSecure - Multimodal Biometric Authentication",
+    "description": "Advanced biometric authentication system combining facial recognition, fingerprint, iris scan, voice recognition, and behavioral biometrics for ultra-secure access control. AI-powered liveness detection prevents spoofing attacks. Achieves 99.99% accuracy with <0.1% false acceptance rate. Tested with 5 million users across banking and government applications.",
+    "status": "Beta Testing",
+    "stage": "Phase 4 - Pre-Commercial",
+    "team": "18 biometric specialists + 10 AI engineers",
+    "funding": "₹10 Crores (Government + Banking Consortium)",
+    "timeline": "Commercial launch Q1 2026",
+    "image": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop",
+    "technologies": [
+      "Computer Vision",
+      "Deep Learning",
+      "Liveness Detection",
+      "Multimodal Fusion"
+    ],
+    "achievements": [
+      "99.99% authentication accuracy",
+      "0.1% false acceptance rate",
+      "5 million user trials completed",
+      "ISO 30107-3 compliant"
+    ]
+  },
+  {
+    "name": "AgroSense - Precision Agriculture AI Platform",
+    "description": "Comprehensive AI platform for precision agriculture combining satellite imagery, drone data, ground sensors, and weather analytics for crop health monitoring, yield prediction, and farm advisory. Machine learning models trained on 10 years of agricultural data across 20 crops. Provides real-time pest/disease alerts with 92% accuracy helping farmers prevent crop loss.",
+    "status": "Field Deployment",
+    "stage": "Phase 5 - Scaling",
+    "team": "12 agricultural scientists + 15 AI developers",
+    "funding": "₹7 Crores (Agriculture Ministry + Private)",
+    "timeline": "Expanding nationwide",
+    "image": "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&h=400&fit=crop",
+    "technologies": [
+      "Satellite Imaging",
+      "ML Models",
+      "Drone Analytics",
+      "Weather AI"
+    ],
+    "achievements": [
+      "92% disease detection accuracy",
+      "40% average yield improvement",
+      "100,000+ farmers using platform",
+      "15 crops covered"
+    ]
+  }
+]

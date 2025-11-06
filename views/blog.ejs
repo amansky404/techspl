@@ -1,0 +1,175 @@
+<%- include('partials/header') %>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Tech <span class="gradient-text">Blog</span></h1>
+        <p class="page-subtitle">Insights, Trends, and Innovations in Technology</p>
+        <p class="sanskrit-quote">"विद्या विवादाय धनं मदाय" - Knowledge for discussion, wealth for pride</p>
+        <div class="breadcrumb">
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <span>/</span>
+            <span>Blog</span>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Post -->
+<section class="featured-post-section">
+    <div class="container">
+        <div class="featured-post">
+            <div class="featured-post-image">
+                <img src="<%= blogPosts[0].image %>" alt="<%= blogPosts[0].title %>">
+            </div>
+            <div class="featured-post-content">
+                <span class="featured-badge"><i class="fas fa-star"></i> Featured</span>
+                <h2><%= blogPosts[0].title %></h2>
+                <p><%= blogPosts[0].excerpt %></p>
+                <div class="post-meta">
+                    <span><i class="fas fa-user"></i> <%= blogPosts[0].author %></span>
+                    <span><i class="fas fa-calendar"></i> <%= new Date(blogPosts[0].date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+                </div>
+                <a href="/blog/<%= blogPosts[0].id %>" class="btn btn-primary">
+                    <i class="fas fa-book-open"></i> Read Article
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts Grid -->
+<section class="blog-posts-section">
+    <div class="container">
+        <div class="blog-filters">
+            <button class="filter-btn active" data-category="all">All Posts</button>
+            <button class="filter-btn" data-category="cybersecurity">Cybersecurity</button>
+            <button class="filter-btn" data-category="iot">IoT</button>
+            <button class="filter-btn" data-category="drones">Drones</button>
+            <button class="filter-btn" data-category="ai">AI/ML</button>
+        </div>
+
+        <div class="blog-grid">
+            <% blogPosts.forEach((post, index) => { %>
+            <% if(index > 0) { %>
+            <article class="blog-card" data-categories="<%= [post.category, ...(post.tags||[])].map(t => (t||'').toLowerCase().replace(/[^a-z0-9]+/g, '-') ).join(' ') %>">
+                <div class="blog-card-image">
+                    <img src="<%= post.image %>" alt="<%= post.title %>">
+                    <div class="blog-card-date">
+                        <%= new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) %>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <h3><%= post.title %></h3>
+                    <p><%= post.excerpt %></p>
+                    <div class="blog-card-footer">
+                        <div class="blog-author">
+                            <i class="fas fa-user-circle"></i>
+                            <span><%= post.author %></span>
+                        </div>
+                        <a href="/blog/<%= post.id %>" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <% } %>
+            <% }); %>
+
+            <!-- Additional Sample Posts -->
+            <article class="blog-card" data-categories="technology 5g edge-computing innovation">
+                <div class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop" alt="5G Networks">
+                    <div class="blog-card-date">28 Oct</div>
+                </div>
+                <div class="blog-card-content">
+                    <h3>5G Networks: Powering India's Digital Infrastructure</h3>
+                    <p>Exploring how 5G technology is enabling faster connectivity and new possibilities</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-author">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Network Team</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-categories="cybersecurity cloud-security best-practices">
+                <div class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop" alt="Cloud Security">
+                    <div class="blog-card-date">22 Oct</div>
+                </div>
+                <div class="blog-card-content">
+                    <h3>Cloud Security Best Practices for 2025</h3>
+                    <p>Essential security measures for protecting cloud infrastructure and data</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-author">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Security Team</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-categories="smart-cities iot ai">
+                <div class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=400&fit=crop" alt="Smart Cities">
+                    <div class="blog-card-date">18 Oct</div>
+                </div>
+                <div class="blog-card-content">
+                    <h3>Building Smarter Cities with IoT and AI</h3>
+                    <p>How technology is transforming urban infrastructure and citizen services</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-author">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Smart City Division</span>
+                        </div>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="blog-pagination">
+            <button class="btn btn-outline"><i class="fas fa-chevron-left"></i> Previous</button>
+            <div class="pagination-numbers">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>...</span>
+                <span>10</span>
+            </div>
+            <button class="btn btn-outline">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-box">
+            <div class="newsletter-icon">
+                <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest tech insights, updates, and industry news delivered to your inbox</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

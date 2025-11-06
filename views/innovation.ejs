@@ -1,0 +1,347 @@
+<%- include('partials/header') %>
+
+<script>
+    const innovationsData = <%- JSON.stringify(innovations) %>;
+</script>
+
+<!-- Page Header -->
+<section class="page-header innovation-header">
+    <div class="container">
+        <h1 class="page-title"><span class="gradient-text">Innovation Lab</span></h1>
+        <p class="page-subtitle">Pioneering Tomorrow's Technology Today</p>
+        <p class="sanskrit-quote">"नवीनता प्रगतेः आधारः" - Innovation is the foundation of progress</p>
+        <div class="breadcrumb">
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <span>/</span>
+            <span>Innovation Lab</span>
+        </div>
+    </div>
+</section>
+
+<!-- Innovation Intro -->
+<section class="innovation-intro-section">
+    <div class="container">
+        <div class="innovation-intro-content">
+            <div class="intro-text">
+                <h2>Shaping the Future of Technology</h2>
+                <p class="lead">
+                    Our Innovation Lab is at the forefront of technological advancement, researching and 
+                    developing cutting-edge solutions in AI, IoT, Quantum Computing, and emerging technologies.
+                </p>
+                <p>
+                    With a dedicated team of researchers, engineers, and visionaries, we transform 
+                    groundbreaking ideas into practical solutions that drive India's technological sovereignty.
+                </p>
+                <div class="lab-stats">
+                    <div class="lab-stat">
+                        <i class="fas fa-flask"></i>
+                        <h3>50+</h3>
+                        <p>Active Research Projects</p>
+                    </div>
+                    <div class="lab-stat">
+                        <i class="fas fa-award"></i>
+                        <h3>15+</h3>
+                        <p>Patents Filed</p>
+                    </div>
+                    <div class="lab-stat">
+                        <i class="fas fa-users"></i>
+                        <h3>30+</h3>
+                        <p>Research Scientists</p>
+                    </div>
+                </div>
+            </div>
+            <div class="intro-image">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&h=500&fit=crop" alt="Innovation Lab">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Current Innovations -->
+<section class="innovations-showcase-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Current <span class="gradient-text">Innovations</span></h2>
+            <p class="section-subtitle">Breakthrough Projects in Development</p>
+        </div>
+        <div class="innovations-grid">
+            <% for (let idx = 0; idx < innovations.length; idx++) { const innovation = innovations[idx]; %>
+            <div class="innovation-card">
+                <div class="innovation-image">
+                    <img src="<%= innovation.image %>" alt="<%= innovation.name %>">
+                    <div class="innovation-badge"><%= innovation.status %></div>
+                </div>
+                <div class="innovation-content">
+                    <h3><%= innovation.name %></h3>
+                    <p><%= innovation.description %></p>
+                    <div class="innovation-footer">
+                        <button class="btn btn-sm btn-primary" onclick="openInnovationModal(<%= idx %>)">
+                            <i class="fas fa-info-circle"></i> Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<!-- Innovation Detail Modal -->
+<div id="innovationModal" style="display: none;">
+    <div class="modal-overlay" onclick="closeInnovationModal()"></div>
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeInnovationModal()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="modalInnovationContent"></div>
+    </div>
+</div>
+
+<!-- Research Areas -->
+<section class="research-areas-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Research <span class="gradient-text">Focus Areas</span></h2>
+        </div>
+        <div class="research-grid">
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Artificial Intelligence</h3>
+                <p>Machine learning, neural networks, and cognitive computing for intelligent systems</p>
+                <ul>
+                    <li>Computer Vision</li>
+                    <li>Natural Language Processing</li>
+                    <li>Predictive Analytics</li>
+                </ul>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3>Quantum Computing</h3>
+                <p>Next-generation quantum algorithms and cryptography for ultra-secure systems</p>
+                <ul>
+                    <li>Quantum Encryption</li>
+                    <li>Quantum Algorithms</li>
+                    <li>Quantum Networks</li>
+                </ul>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3>Edge Computing</h3>
+                <p>Low-latency processing at the edge for IoT and real-time applications</p>
+                <ul>
+                    <li>Edge AI</li>
+                    <li>Distributed Systems</li>
+                    <li>Real-time Processing</li>
+                </ul>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Robotics & Automation</h3>
+                <p>Advanced robotics for industrial and defense applications</p>
+                <ul>
+                    <li>Autonomous Systems</li>
+                    <li>Drone Swarms</li>
+                    <li>Industrial Robots</li>
+                </ul>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <h3>Blockchain</h3>
+                <p>Distributed ledger technologies for secure and transparent systems</p>
+                <ul>
+                    <li>Smart Contracts</li>
+                    <li>Supply Chain</li>
+                    <li>Digital Identity</li>
+                </ul>
+            </div>
+            <div class="research-card">
+                <div class="research-icon">
+                    <i class="fas fa-satellite"></i>
+                </div>
+                <h3>Space Technology</h3>
+                <p>Satellite communications and space-based IoT solutions</p>
+                <ul>
+                    <li>Satellite IoT</li>
+                    <li>Remote Sensing</li>
+                    <li>Communication Systems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Collaboration -->
+<section class="collaboration-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Academic & Industry <span class="gradient-text">Partnerships</span></h2>
+            <p class="section-subtitle">Collaborating with Leading Institutions</p>
+        </div>
+        <div class="partners-grid">
+            <div class="partner-card">
+                <i class="fas fa-university"></i>
+                <h4>IIT Bombay</h4>
+                <p>Joint Research in AI</p>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h4>ISRO</h4>
+                <p>Space IoT Projects</p>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-flask"></i>
+                <h4>DRDO</h4>
+                <p>Defense Technology</p>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-building"></i>
+                <h4>NASSCOM</h4>
+                <p>Industry Standards</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Join Innovation -->
+<section class="join-innovation-cta">
+    <div class="container">
+        <h2>Want to Collaborate?</h2>
+        <p class="sanskrit-quote">"सङ्गच्छध्वं संवदध्वं" - Move together, speak together</p>
+        <p>Join our innovation ecosystem as a researcher, partner, or sponsor</p>
+        <div class="cta-buttons">
+            <a href="javascript:void(0)" class="btn btn-light" onclick="openContactWithDetails('collaboration', 'Innovation Lab Collaboration')">
+                <i class="fas fa-handshake"></i> Partner With Us
+            </a>
+            <a href="#careers" class="btn btn-outline-light">
+                <i class="fas fa-user-graduate"></i> Research Careers
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+function openInnovationModal(index) {
+    const innovation = innovationsData[index];
+    const modal = document.getElementById('innovationModal');
+    const content = document.getElementById('modalInnovationContent');
+    
+    const statusClass = innovation.status.toLowerCase().replace(/\s+/g, '-');
+    
+    content.innerHTML = `
+        <div class="modal-header">
+            <h2>${innovation.name}</h2>
+            <span class="status-badge ${statusClass}">${innovation.status}</span>
+        </div>
+        ${innovation.image ? `
+        <div class="modal-image-container">
+            <img src="${innovation.image}" alt="${innovation.name}" class="modal-innovation-image">
+        </div>
+        ` : ''}
+        <div class="modal-body">
+            <p style="text-align: justify;">${innovation.description}</p>
+            
+            ${innovation.impact ? `
+            <div class="impact-section">
+                <h3>Impact</h3>
+                <p style="text-align: justify;">${innovation.impact}</p>
+            </div>
+            ` : ''}
+            
+            ${innovation.technologies && innovation.technologies.length > 0 ? `
+            <div class="technologies-section">
+                <h3>Technologies Used</h3>
+                <div class="tech-tags">
+                    ${innovation.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+            </div>
+            ` : ''}
+            
+            ${innovation.achievements && innovation.achievements.length > 0 ? `
+            <div class="achievements-section">
+                <h3>Key Achievements</h3>
+                <ul>
+                    ${innovation.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                </ul>
+            </div>
+            ` : ''}
+            
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="closeInnovationModal(); openContactWithDetails('innovation', '${innovation.name}')">
+                    <i class="fas fa-envelope"></i> Collaborate With Us
+                </button>
+            </div>
+        </div>
+    `;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeInnovationModal() {
+    const modal = document.getElementById('innovationModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function openContactWithDetails(type, name) {
+    // Open contact modal (supports both existing openContactModal function or manual activation)
+    if (typeof openContactModal === 'function') {
+        openContactModal();
+    } else {
+        const contactModal = document.getElementById('contactModal');
+        if (contactModal) {
+            contactModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    prefillContact(type, name);
+}
+
+function prefillContact(type, name) {
+    // Delay to ensure modal content is in DOM
+    setTimeout(() => {
+        const subjectField = document.getElementById('subject');
+        const messageField = document.getElementById('message');
+        if (subjectField) {
+            const subjectMap = {
+                service: 'services',
+                product: 'products',
+                solution: 'general',
+                innovation: 'partnership',
+                collaboration: 'partnership'
+            };
+            subjectField.value = subjectMap[type] || 'general';
+        }
+        if (messageField) {
+            const messageTemplates = {
+                service: `I am interested in learning more about your service: ${name}.\n\nPlease provide more details, pricing, and onboarding steps.\n\nThank you.`,
+                product: `I would like to inquire about the product: ${name}.\n\nPlease share pricing, specifications, and availability details.\n\nThank you.`,
+                solution: `I am interested in the solution: ${name}.\n\nPlease provide information about implementation scope, pricing, and timelines.\n\nThank you.`,
+                innovation: `I'd like to collaborate on the innovation project: ${name}.\n\nPlease share partnership models, current stage details, and next steps.\n\nThank you.`,
+                collaboration: `We're interested in exploring collaboration around: ${name}.\n\nKindly provide partnership options, engagement process, and timelines.\n\nThank you.`
+            };
+            messageField.value = messageTemplates[type] || `I am interested in ${name}. Please provide more information.`;
+        }
+    }, 100);
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeInnovationModal();
+    }
+});
+</script>
+
+<%- include('partials/footer') %>
+

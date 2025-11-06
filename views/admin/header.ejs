@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Tech Sanrakshanam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-panel">
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h2>Tech Sanrakshanam</h2>
+                    <p class="hindi">तकनीकी संरक्षणम्</p>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="/admin/dashboard" class="<%= page === 'dashboard' ? 'active' : '' %>">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/admin/products" class="<%= page === 'products' ? 'active' : '' %>">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </a>
+                <a href="/admin/services" class="<%= page === 'services' ? 'active' : '' %>">
+                    <i class="fas fa-cogs"></i>
+                    <span>Services</span>
+                </a>
+                <a href="/admin/solutions" class="<%= page === 'solutions' ? 'active' : '' %>">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Solutions</span>
+                </a>
+                <a href="/admin/projects" class="<%= page === 'projects' ? 'active' : '' %>">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="/admin/blog" class="<%= page === 'blog' ? 'active' : '' %>">
+                    <i class="fas fa-blog"></i>
+                    <span>Blog Posts</span>
+                </a>
+                <a href="/admin/innovations" class="<%= page === 'innovations' ? 'active' : '' %>">
+                    <i class="fas fa-flask"></i>
+                    <span>Innovations</span>
+                </a>
+                <a href="/admin/faqs" class="<%= page === 'faqs' ? 'active' : '' %>">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQs</span>
+                </a>
+                
+                <div class="sidebar-divider"></div>
+                
+                <a href="/" target="_blank">
+                    <i class="fas fa-eye"></i>
+                    <span>View Website</span>
+                </a>
+                <a href="/admin/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="admin-main">
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="topbar-right">
+                    <div class="admin-user">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Welcome, <%= username %></span>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Page Content -->
+            <main class="admin-content">

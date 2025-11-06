@@ -1,0 +1,100 @@
+<%- include('header') %>
+
+<div class="page-header">
+    <h1><i class="fas fa-lightbulb"></i> Solutions Management</h1>
+    <button class="btn btn-primary" onclick="showAddForm()">
+        <i class="fas fa-plus"></i> Add New Solution
+    </button>
+</div>
+
+<div id="addForm" class="form-card" style="display: none;">
+    <h2><span id="formTitle">Add New Solution</span></h2>
+    <form id="solutionForm" action="/admin/solutions/add" method="POST">
+        <div class="form-group">
+            <label>Solution Name *</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label>Description *</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Image URL *</label>
+            <input type="text" id="image" name="image" placeholder="https://example.com/image.jpg" required>
+            <small>Enter the full URL of the solution image</small>
+        </div>
+        <div class="form-group">
+            <label>Benefits</label>
+            <input type="text" id="benefits" name="benefits" placeholder="Key benefits">
+        </div>
+        <div class="form-group">
+            <label>Technologies (comma-separated)</label>
+            <input type="text" id="technologies" name="technologies" placeholder="IoT, AI/ML, Cloud">
+        </div>
+        <div class="form-group">
+            <label>Features (comma-separated)</label>
+            <textarea id="features" name="features" rows="3"></textarea>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> <span id="submitBtn">Save</span></button>
+            <button type="button" class="btn btn-secondary" onclick="hideAddForm()"><i class="fas fa-times"></i> Cancel</button>
+        </div>
+    </form>
+</div>
+
+<div class="data-table">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Technologies</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% solutions.forEach((solution, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td class="image-cell">
+                        <% if (solution.image) { %>
+                            <img src="<%= solution.image %>" alt="<%= solution.name %>" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+                        <% } else { %>
+                            <span class="text-muted">No image</span>
+                        <% } %>
+                    </td>
+                    <td>
+                        <strong><%= solution.name %></strong>
+                        <p class="small-text"><%= solution.description.substring(0, 100) %>...</p>
+                    </td>
+                    <td>
+                        <% if (solution.technologies) { %>
+                            <% solution.technologies.slice(0, 3).forEach(tech => { %>
+                                <span class="badge badge-info"><%= tech %></span>
+                            <% }); %>
+                        <% } %>
+                    </td>
+                    <td>
+                        <button class="btn-icon btn-warning" 
+                                data-index="<%= index %>" 
+                                data-solution='<%- JSON.stringify(solution) %>'
+                                onclick="editSolution(this.dataset.index, JSON.parse(this.dataset.solution))" 
+                                title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-icon btn-danger" 
+                                data-type="solutions" 
+                                data-index="<%= index %>"
+                                onclick="deleteItem(this.dataset.type, this.dataset.index)" 
+                                title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('footer') %>

@@ -1,0 +1,178 @@
+<%- include('partials/header') %>
+
+<!-- Article Header -->
+<article class="blog-post-article">
+    <div class="container">
+        <div class="post-header">
+            <h1 class="post-title"><%= post.title %></h1>
+            <div class="post-meta">
+                <span class="post-author">
+                    <i class="fas fa-user-circle"></i> <%= post.author %>
+                </span>
+                <span class="post-date">
+                    <i class="fas fa-calendar"></i> <%= new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                </span>
+                <span class="post-read-time">
+                    <i class="fas fa-clock"></i> <%= post.readTime || '15 min read' %>
+                </span>
+            </div>
+        </div>
+
+        <div class="post-featured-image">
+            <img src="<%= post.image %>" alt="<%= post.title %>">
+        </div>
+
+        <div class="post-content" style="text-align: justify; line-height: 1.8; max-width: 900px; margin: 0 auto;">
+            <p class="lead" style="text-align: justify; font-size: 1.15rem; margin-bottom: 30px; color: #555;"><%= post.excerpt %></p>
+            
+            <% if (post.content) { %>
+                <% 
+                // Process the entire content block by block
+                const content = post.content;
+                const lines = content.split('\n');
+                let currentBlock = [];
+                let inList = false;
+                
+                const processBlock = (block) => {
+                    if (!block || !block.trim()) return;
+                    const trimmed = block.trim();
+                    
+                    // Check for H2 heading (##)
+                    if (trimmed.startsWith('## ') && !trimmed.startsWith('###')) {
+                        const heading = trimmed.replace(/^##\s*/, '').trim();
+                        %>
+                        <h2 style="margin-top: 50px; margin-bottom: 25px; color: var(--primary-color); font-size: 2rem; font-weight: 700; border-bottom: 3px solid var(--primary-color); padding-bottom: 10px;"><%= heading %></h2>
+                        <%
+                    }
+                    // Check for H3 heading (###)
+                    else if (trimmed.startsWith('### ')) {
+                        const heading = trimmed.replace(/^###\s*/, '').trim();
+                        %>
+                        <h3 style="margin-top: 40px; margin-bottom: 20px; color: #2c3e50; font-size: 1.6rem; font-weight: 600;"><%= heading %></h3>
+                        <%
+                    }
+                    // Check for images ![alt](url)
+                    else if (trimmed.startsWith('![')) {
+                        const match = trimmed.match(/!\[([^\]]*)\]\(([^\)]+)\)/);
+                        if (match) {
+                            %>
+                            <figure style="margin: 40px 0; text-align: center;">
+                                <img src="<%= match[2] %>" alt="<%= match[1] %>" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.15);">
+                                <% if (match[1]) { %>
+                                <figcaption style="margin-top: 15px; font-size: 0.95rem; color: #666; font-style: italic;"><%= match[1] %></figcaption>
+                                <% } %>
+                            </figure>
+                            <%
+                        }
+                    }
+                    // Check for blockquotes (>)
+                    else if (trimmed.startsWith('> ')) {
+                        const quote = trimmed.replace(/^>\s*/, '');
+                        %>
+                        <blockquote style="border-left: 5px solid var(--primary-color); padding: 20px 30px; margin: 30px 0; background: linear-gradient(to right, #f8f9fa, #ffffff); font-style: italic; color: #555; font-size: 1.05rem; border-radius: 0 8px 8px 0;">
+                            <%= quote %>
+                        </blockquote>
+                        <%
+                    }
+                    // Check for bold text with **text**
+                    else if (trimmed.includes('**')) {
+                        const formatted = trimmed.replace(/\*\*([^\*]+)\*\*/g, '<strong style="color: #2c3e50; font-weight: 600;">$1</strong>');
+                        %>
+                        <p style="margin-bottom: 20px; font-size: 1.05rem; color: #333;"><%= formatted %></p>
+                        <%
+                    }
+                    // Regular paragraph
+                    else if (trimmed.length > 0 && !trimmed.startsWith('-') && !trimmed.startsWith('*')) {
+                        %>
+                        <p style="margin-bottom: 20px; font-size: 1.05rem; color: #333; line-height: 1.8;"><%= trimmed %></p>
+                        <%
+                    }
+                };
+                
+                const processList = (items) => {
+                    if (items.length === 0) return;
+                    %>
+                    <ul style="margin: 25px 0; padding-left: 40px; list-style-type: disc;">
+                    <% items.forEach(item => { 
+                        const text = item.replace(/^[-*]\s*/, '').trim();
+                        const formatted = text.replace(/\*\*([^\*]+)\*\*/g, '<strong style="color: #2c3e50;">$1</strong>');
+                    %>
+                        <li style="margin-bottom: 12px; font-size: 1.05rem; color: #333; line-height: 1.7;"><%= formatted %></li>
+                    <% }); %>
+                    </ul>
+                    <%
+                };
+                
+                let listItems = [];
+                
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+                    const trimmedLine = line.trim();
+                    
+                    // Check if this is a list item
+                    if (trimmedLine.startsWith('- ') || trimmedLine.startsWith('* ')) {
+                        if (!inList) {
+                            // Starting a new list, process any pending block
+                            if (currentBlock.length > 0) {
+                                processBlock(currentBlock.join('\n'));
+                                currentBlock = [];
+                            }
+                            inList = true;
+                        }
+                        listItems.push(trimmedLine);
+                    } else {
+                        // Not a list item
+                        if (inList) {
+                            // End of list, process it
+                            processList(listItems);
+                            listItems = [];
+                            inList = false;
+                        }
+                        
+                        // Check if we should process the current block
+                        if (trimmedLine === '' && currentBlock.length > 0) {
+                            processBlock(currentBlock.join('\n'));
+                            currentBlock = [];
+                        } else if (trimmedLine !== '') {
+                            currentBlock.push(line);
+                        }
+                    }
+                }
+                
+                // Process any remaining list
+                if (inList && listItems.length > 0) {
+                    processList(listItems);
+                }
+                
+                // Process any remaining block
+                if (currentBlock.length > 0) {
+                    processBlock(currentBlock.join('\n'));
+                }
+                %>
+            <% } %>
+        </div>
+
+        <div class="post-footer">
+            <div class="post-tags">
+                <i class="fas fa-tags"></i>
+                <span class="tag">Technology</span>
+                <span class="tag">Innovation</span>
+                <span class="tag">India</span>
+            </div>
+            <div class="post-share">
+                <span>Share:</span>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+
+        <div class="post-navigation">
+            <a href="/blog" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+        </div>
+    </div>
+</article>
+
+<%- include('partials/footer') %>

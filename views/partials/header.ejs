@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Sanrakshanam - तकनीकी संरक्षणम् | IT Solutions, Cybersecurity, IoT, Drones</title>
+    <meta name="description" content="Tech Sanrakshanam - MSME & ISO 27001 certified IT solutions provider specializing in Cybersecurity, IoT, Drones, and Network Infrastructure">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar with certifications -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="sanskrit-sloka">
+                    <i class="fas fa-om"></i>
+                    <span class="sloka-text">सत्यं वद । धर्मं चर</span>
+                    <span class="sloka-meaning">| Speak Truth, Practice Righteousness |</span>
+                </div>
+                <div class="certifications">
+                    <span class="cert-badge"><i class="fas fa-certificate"></i> MSME Verified</span>
+                    <span class="cert-badge"><i class="fas fa-shield-alt"></i> ISO 27001</span>
+                    <span class="cert-badge"><i class="fas fa-landmark"></i> GeM Registered</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-shield-halved"></i>
+                    <div class="logo-text">
+                        <span class="logo-main">Tech Sanrakshanam</span>
+                        <span class="logo-sub">तकनीकी संरक्षणम्</span>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="/" class="<%= page === 'home' ? 'active' : '' %>"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="fas fa-th-large"></i> Catalogue <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/products"><i class="fas fa-box"></i> Products</a></li>
+                            <li><a href="/services"><i class="fas fa-cogs"></i> Services</a></li>
+                            <li><a href="/solutions"><i class="fas fa-lightbulb"></i> Solutions</a></li>
+                            <li><a href="/projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/innovation" class="<%= page === 'innovation' ? 'active' : '' %>"><i class="fas fa-flask"></i> Innovation Lab</a></li>
+                    <li><a href="/blog" class="<%= page === 'blog' ? 'active' : '' %>"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="/faq" class="<%= page === 'faq' ? 'active' : '' %>"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="/community" class="<%= page === 'community' ? 'active' : '' %>"><i class="fas fa-users"></i> Community</a></li>
+                    <li><a href="#contact" class="btn-contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>

@@ -1,0 +1,105 @@
+<%- include('header') %>
+
+<div class="page-header">
+    <h1><i class="fas fa-blog"></i> Blog Posts Management</h1>
+    <button class="btn btn-primary" onclick="showAddForm()">
+        <i class="fas fa-plus"></i> Add New Blog Post
+    </button>
+</div>
+
+<div id="addForm" class="form-card" style="display: none;">
+    <h2><span id="formTitle">Add New Blog Post</span></h2>
+    <form id="blogForm" action="/admin/blog/add" method="POST">
+        <div class="form-group">
+            <label>Title *</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label>Excerpt *</label>
+            <textarea id="excerpt" name="excerpt" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Content *</label>
+            <textarea id="content" name="content" rows="6" required></textarea>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Author *</label>
+                <input type="text" id="author" name="author" required>
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" id="category" name="category" placeholder="Technology, IoT, Security">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Date *</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label>Read Time</label>
+                <input type="text" id="readTime" name="readTime" placeholder="5 min read">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Image URL</label>
+            <input type="text" id="image" name="image" placeholder="https://...">
+        </div>
+        <div class="form-group">
+            <label>Tags (comma-separated)</label>
+            <input type="text" id="tags" name="tags" placeholder="IoT, AI, Innovation">
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> <span id="submitBtn">Publish</span></button>
+            <button type="button" class="btn btn-secondary" onclick="hideAddForm()"><i class="fas fa-times"></i> Cancel</button>
+        </div>
+    </form>
+</div>
+
+<div class="data-table">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% blogPosts.forEach((post, index) => { %>
+                <tr>
+                    <td><%= post.id %></td>
+                    <td>
+                        <strong><%= post.title %></strong>
+                        <p class="small-text"><%= post.excerpt.substring(0, 80) %>...</p>
+                    </td>
+                    <td><%= post.author %></td>
+                    <td><span class="badge badge-primary"><%= post.category || 'General' %></span></td>
+                    <td><%= post.date %></td>
+                    <td>
+                        <button class="btn-icon btn-warning" 
+                                data-id="<%= post.id %>" 
+                                data-post='<%- JSON.stringify(post) %>'
+                                onclick="editBlogPost(this.dataset.id, JSON.parse(this.dataset.post))" 
+                                title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-icon btn-danger" 
+                                data-type="blog" 
+                                data-id="<%= post.id %>"
+                                onclick="deleteItem(this.dataset.type, this.dataset.id)" 
+                                title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('footer') %>

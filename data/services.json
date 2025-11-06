@@ -1,0 +1,189 @@
+[
+  {
+    "name": "Cybersecurity Consulting & Managed Security",
+    "description": "Comprehensive cybersecurity services including vulnerability assessment, penetration testing, security architecture design, ISO 27001 compliance, and 24/7 Security Operations Center (SOC) monitoring with incident response.",
+    "icon": "🔒",
+    "features": [
+      "Vulnerability Assessment & Penetration Testing (VAPT)",
+      "ISO 27001",
+      "PCI-DSS",
+      "HIPAA Compliance Auditing",
+      "Security Architecture & Design Review",
+      "Managed SOC with 24/7 Monitoring",
+      "Incident Response & Forensics",
+      "Security Awareness Training",
+      "Red Team / Blue Team Exercises",
+      "Threat Intelligence Integration"
+    ],
+    "benefits": [
+      "85% reduction in security incidents",
+      "Compliance with national and international standards",
+      "Proactive threat detection and mitigation",
+      "Reduced cyber insurance premiums"
+    ],
+    "pricing": "Starting from ₹2,50,000/year",
+    "deliveryTime": "2-4 weeks for assessment",
+    "image": "/images/5cb5a853-dffe-41ef-881a-e6557c0e6a64.jpg"
+  },
+  {
+    "name": "Cloud Migration & Management Services",
+    "description": "End-to-end cloud transformation services including assessment, migration strategy, implementation, and ongoing management for AWS, Microsoft Azure, and Google Cloud Platform with focus on security and cost optimization.",
+    "icon": "☁️",
+    "features": [
+      "Cloud Readiness Assessment",
+      "Multi-Cloud Architecture Design",
+      "Application Migration (Lift-and-Shift, Re-platform, Re-architect)",
+      "DevOps & CI/CD Pipeline Setup",
+      "Cloud Security & Compliance",
+      "Cost Optimization & FinOps",
+      "Disaster Recovery & Business Continuity",
+      "24/7 Cloud Operations Support"
+    ],
+    "benefits": [
+      "40-60% reduction in infrastructure costs",
+      "99.99% uptime SLA",
+      "Scalability and elasticity",
+      "Faster time-to-market for applications"
+    ],
+    "pricing": "Starting from ₹5,00,000 (project-based)",
+    "deliveryTime": "6-12 weeks for full migration"
+  },
+  {
+    "name": "Enterprise Network Infrastructure",
+    "description": "Design, deployment, and management of secure, high-performance enterprise networks including LAN/WAN, SD-WAN, data centers, wireless networks, and unified communications with redundancy and 24/7 monitoring.",
+    "icon": "🌐",
+    "features": [
+      "Network Design & Architecture",
+      "LAN/WAN Deployment & Optimization",
+      "SD-WAN Implementation",
+      "Data Center Networking",
+      "Enterprise WiFi 6/6E Solutions",
+      "Network Security (Firewall, IPS/IDS)",
+      "Load Balancing & High Availability",
+      "24/7 Network Operations Center (NOC)"
+    ],
+    "benefits": [
+      "99.9% network uptime guarantee",
+      "50% faster network performance",
+      "Centralized management and monitoring",
+      "Scalable for business growth"
+    ],
+    "pricing": "Starting from ₹10,00,000 (project-based)",
+    "deliveryTime": "8-16 weeks depending on scale"
+  },
+  {
+    "name": "IoT Solutions & System Integration",
+    "description": "Complete IoT lifecycle services from consultation and proof-of-concept to deployment and maintenance. Custom IoT application development for industrial automation, smart buildings, asset tracking, and environmental monitoring.",
+    "icon": "🤖",
+    "features": [
+      "IoT Strategy & Roadmap Development",
+      "Custom IoT Application Development",
+      "Sensor Deployment & Integration",
+      "Edge Computing Implementation",
+      "IoT Platform Integration (AWS IoT, Azure IoT)",
+      "Data Analytics & Visualization",
+      "Predictive Maintenance Solutions",
+      "Remote Monitoring & Control"
+    ],
+    "benefits": [
+      "60% improvement in operational efficiency",
+      "Predictive maintenance reduces downtime by 40%",
+      "Real-time visibility across operations",
+      "ROI within 18-24 months"
+    ],
+    "pricing": "Starting from ₹8,00,000 (project-based)",
+    "deliveryTime": "12-20 weeks for full deployment"
+  },
+  {
+    "name": "Professional Drone Services",
+    "description": "DGCA-compliant drone operations for aerial surveillance, inspection, mapping, surveying, and agricultural applications. Includes trained pilots, equipment, data processing, and actionable insights delivery.",
+    "icon": "🛸",
+    "features": [
+      "Aerial Surveying & Mapping (Topographic, Cadastral)",
+      "Infrastructure Inspection (Towers, Pipelines, Buildings)",
+      "Agricultural Monitoring (Crop Health, Pest Detection)",
+      "Surveillance & Security Patrols",
+      "Thermal Imaging & Leak Detection",
+      "Volumetric Measurements & Stockpile Analysis",
+      "Emergency Response & Disaster Management",
+      "3D Modeling & Photogrammetry"
+    ],
+    "benefits": [
+      "80% faster than traditional surveying",
+      "Safer inspections without human risk",
+      "High-resolution data (2cm GSD)",
+      "Cost-effective for large areas"
+    ],
+    "pricing": "Starting from ₹25,000/day (operation-based)",
+    "deliveryTime": "1-5 days per project"
+  },
+  {
+    "name": "Managed IT Services & Support",
+    "description": "Comprehensive IT infrastructure management including server administration, database management, application monitoring, help desk support, patch management, and IT asset lifecycle management with guaranteed SLAs.",
+    "icon": "💻",
+    "features": [
+      "24/7 Infrastructure Monitoring",
+      "Server & Database Administration",
+      "Application Performance Management",
+      "Multi-tier Help Desk Support",
+      "Patch & Vulnerability Management",
+      "Backup & Disaster Recovery",
+      "IT Asset Management",
+      "Software License Management"
+    ],
+    "benefits": [
+      "40% reduction in IT operational costs",
+      "95% first-call resolution rate",
+      "Proactive issue detection and resolution",
+      "Focus on core business activities"
+    ],
+    "pricing": "Starting from ₹1,50,000/month",
+    "deliveryTime": "2-3 weeks for onboarding"
+  },
+  {
+    "name": "Digital Transformation Consulting",
+    "description": "Strategic consulting for enterprise digital transformation including process automation, data analytics, artificial intelligence implementation, legacy system modernization, and change management.",
+    "icon": "🚀",
+    "features": [
+      "Digital Maturity Assessment",
+      "Transformation Strategy & Roadmap",
+      "Business Process Automation (RPA)",
+      "AI/ML Implementation & Analytics",
+      "Legacy Application Modernization",
+      "Digital Customer Experience Design",
+      "Change Management & Training",
+      "Innovation Lab Setup"
+    ],
+    "benefits": [
+      "70% faster business processes",
+      "3x improvement in customer satisfaction",
+      "Data-driven decision making",
+      "Competitive advantage in digital economy"
+    ],
+    "pricing": "Starting from ₹15,00,000 (project-based)",
+    "deliveryTime": "16-32 weeks for transformation"
+  },
+  {
+    "name": "Smart Building & Facility Management",
+    "description": "Integrated building management solutions with IoT sensors, energy management, access control, HVAC automation, fire safety systems, and centralized monitoring for intelligent, efficient facilities.",
+    "icon": "🏢",
+    "features": [
+      "Building Management System (BMS) Integration",
+      "Energy Management & Optimization",
+      "HVAC & Lighting Automation",
+      "Occupancy Monitoring & Space Utilization",
+      "Integrated Security Systems",
+      "Predictive Maintenance",
+      "Environmental Monitoring (Air Quality, Temperature)",
+      "Unified Dashboard & Analytics"
+    ],
+    "benefits": [
+      "30-40% energy cost savings",
+      "Improved occupant comfort and productivity",
+      "Centralized control and monitoring",
+      "Extended equipment lifespan"
+    ],
+    "pricing": "Starting from ₹12,00,000 (project-based)",
+    "deliveryTime": "10-18 weeks for deployment"
+  }
+]

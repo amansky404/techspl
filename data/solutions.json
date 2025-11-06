@@ -1,0 +1,205 @@
+[
+  {
+    "name": "Smart City Command & Control Center",
+    "description": "Integrated urban management platform for intelligent traffic control, public safety, emergency response, environmental monitoring, and civic services. Real-time data aggregation from 1000+ sensors with AI-powered analytics for predictive decision-making.",
+    "icon": "🏙️",
+    "technologies": [
+      "IoT Sensors",
+      "AI/ML Analytics",
+      "Big Data Platform",
+      "GIS Mapping",
+      "Video Analytics"
+    ],
+    "features": [
+      "Integrated Command & Control Center",
+      "Smart Traffic Management with AI",
+      "Intelligent Street Lighting (30% energy savings)",
+      "Public Safety & Surveillance Network",
+      "Environmental Monitoring (Air",
+      "Water",
+      "Noise)",
+      "Waste Management Optimization",
+      "Citizen Services Portal & Mobile App",
+      "Emergency Response Coordination"
+    ],
+    "benefits": "40% reduction in traffic congestion, 50% faster emergency response, 30% energy savings",
+    "clients": "Deployed in 12 smart cities including Pune, Surat, Bhopal",
+    "caseStudy": "Pune Smart City - 2000+ cameras, 5000+ sensors, serving 3.5 million citizens",
+    "image": "/images/8eb3db3d270bb43108a8e43e172e56e9.jpg"
+  },
+  {
+    "name": "Industry 4.0 - Smart Factory Automation",
+    "description": "Complete industrial automation solution with SCADA/PLC integration, IoT-enabled predictive maintenance, quality control with computer vision, energy management, and production optimization using machine learning algorithms.",
+    "icon": "🏭",
+    "technologies": [
+      "Industrial IoT",
+      "SCADA/PLC",
+      "Edge Computing",
+      "Computer Vision",
+      "Predictive Analytics"
+    ],
+    "features": [
+      "SCADA & PLC System Integration",
+      "Real-time Production Monitoring",
+      "Predictive Maintenance (60% downtime reduction)",
+      "Quality Control with Computer Vision",
+      "Energy Management & Optimization",
+      "Supply Chain Integration",
+      "Digital Twin Simulation",
+      "Worker Safety Monitoring"
+    ],
+    "benefits": "35% increase in OEE, 60% reduction in unplanned downtime, 25% quality improvement",
+    "clients": "Leading automotive, pharmaceutical, and electronics manufacturers",
+    "caseStudy": "Auto Manufacturing Plant - 10,000+ sensors, 99.7% uptime, ₹12 Cr annual savings"
+  },
+  {
+    "name": "Defense & Border Surveillance System",
+    "description": "Multi-layered perimeter security solution with autonomous drone patrols, thermal imaging, radar integration, AI-powered intrusion detection, and secure communication networks for military and critical infrastructure protection.",
+    "icon": "🎖️",
+    "technologies": [
+      "Autonomous Drones",
+      "Thermal Imaging",
+      "Radar Systems",
+      "AI Video Analytics",
+      "Encrypted Communications"
+    ],
+    "features": [
+      "Autonomous Drone Patrol Systems",
+      "Long-range Thermal & Night Vision",
+      "Ground-based Radar Integration",
+      "AI-powered Intrusion Detection",
+      "Perimeter Security with Smart Fencing",
+      "Secure Communication Networks",
+      "Command Center with 3D Visualization",
+      "Incident Response Automation"
+    ],
+    "benefits": "24/7 autonomous surveillance, 99.9% intrusion detection accuracy, rapid response",
+    "clients": "Ministry of Defence, Border Security Force, Critical Infrastructure",
+    "caseStudy": "Border Surveillance - 200 km coverage, 24/7 monitoring, 100% incident detection"
+  },
+  {
+    "name": "Precision Agriculture & Farm Management",
+    "description": "Comprehensive agricultural technology solution combining drone-based crop monitoring, IoT soil sensors, automated irrigation, weather forecasting, and AI-powered crop advisory for maximizing yield and optimizing resource usage.",
+    "icon": "🌾",
+    "technologies": [
+      "Agricultural Drones",
+      "Soil Sensors",
+      "Weather Analytics",
+      "Crop AI",
+      "Automated Irrigation"
+    ],
+    "features": [
+      "Drone-based Multispectral Crop Monitoring",
+      "Soil Moisture & Nutrient Sensors",
+      "Automated Precision Irrigation",
+      "Pest & Disease Detection using AI",
+      "Weather Forecasting & Alerts",
+      "Yield Prediction & Optimization",
+      "Farm Management Mobile App",
+      "Marketplace Integration"
+    ],
+    "benefits": "40% increase in crop yield, 50% water savings, 30% reduction in pesticide use",
+    "clients": "2 million acres covered across Maharashtra, Karnataka, Punjab",
+    "caseStudy": "Cotton Farmers Cooperative - 50,000 acres, 35% yield increase, ₹20 Cr savings"
+  },
+  {
+    "name": "Healthcare IT & Telemedicine Platform",
+    "description": "Comprehensive hospital information system with electronic health records, telemedicine capabilities, medical device integration, laboratory information system, pharmacy management, and patient portal with AI-assisted diagnostics.",
+    "icon": "🏥",
+    "technologies": [
+      "Cloud Platform",
+      "HL7/FHIR Integration",
+      "AI Diagnostics",
+      "Blockchain",
+      "IoMT"
+    ],
+    "features": [
+      "Electronic Health Records (EHR/EMR)",
+      "Telemedicine & Remote Consultation",
+      "Medical Device Integration (IoMT)",
+      "Laboratory Information System",
+      "Pharmacy & Inventory Management",
+      "AI-assisted Diagnostic Support",
+      "Patient Portal & Mobile App",
+      "HIPAA Compliant Security"
+    ],
+    "benefits": "70% faster patient processing, 90% reduction in medical errors, improved outcomes",
+    "clients": "50+ hospitals, 15 healthcare networks, 5000+ doctors",
+    "caseStudy": "Multi-specialty Hospital Chain - 15 hospitals, 2 million patient records, 100% uptime"
+  },
+  {
+    "name": "Banking Cybersecurity & Fraud Prevention",
+    "description": "Multi-layered banking security solution with AI-powered fraud detection, secure payment gateway, transaction monitoring, compliance management, and incident response for protecting financial transactions and customer data.",
+    "icon": "🏦",
+    "technologies": [
+      "AI Fraud Detection",
+      "Blockchain",
+      "Zero Trust Security",
+      "Biometric Auth",
+      "SIEM"
+    ],
+    "features": [
+      "AI-powered Real-time Fraud Detection",
+      "Secure Payment Gateway Integration",
+      "Transaction Monitoring & Analytics",
+      "Customer Authentication (Biometric, OTP)",
+      "PCI-DSS Compliance Management",
+      "DDoS Protection & WAF",
+      "Security Operations Center (SOC)",
+      "Incident Response & Forensics"
+    ],
+    "benefits": "99.5% fraud detection accuracy, zero data breaches, regulatory compliance",
+    "clients": "12 banks, 3 NBFCs, 500+ branches protected",
+    "caseStudy": "Regional Bank - 500 branches, ₹50 Cr fraud prevented annually, 100% PCI compliance"
+  },
+  {
+    "name": "E-Governance & Citizen Services",
+    "description": "Digital governance platform for government departments with citizen services portal, document management, workflow automation, grievance redressal, and integration with Aadhaar, DigiLocker for seamless service delivery.",
+    "icon": "🏛️",
+    "technologies": [
+      "Cloud Infrastructure",
+      "Aadhaar Integration",
+      "Blockchain",
+      "Mobile Apps",
+      "Analytics"
+    ],
+    "features": [
+      "Citizen Services Portal & Mobile App",
+      "Aadhaar & DigiLocker Integration",
+      "Online Application & Payment",
+      "Automated Workflow Management",
+      "Grievance Redressal System",
+      "Document Management System",
+      "Data Analytics & Dashboards",
+      "Multi-language Support"
+    ],
+    "benefits": "80% reduction in processing time, 95% citizen satisfaction, paperless operations",
+    "clients": "15 state departments, 30 municipal corporations",
+    "caseStudy": "Municipal Corporation - 2 million citizens, 50+ services online, 10 lakh applications/year"
+  },
+  {
+    "name": "Education Technology & Learning Management",
+    "description": "Comprehensive ed-tech platform with learning management system, virtual classrooms, AI-powered personalized learning, student information system, online assessments, and parent-teacher communication portal.",
+    "icon": "�",
+    "technologies": [
+      "Cloud Platform",
+      "AI Personalization",
+      "Video Streaming",
+      "Analytics",
+      "Mobile Apps"
+    ],
+    "features": [
+      "Learning Management System (LMS)",
+      "Virtual Classroom with Live Streaming",
+      "AI-powered Personalized Learning",
+      "Student Information System",
+      "Online Assessments & Auto-grading",
+      "Content Library & Course Builder",
+      "Parent-Teacher Communication Portal",
+      "Performance Analytics & Reports"
+    ],
+    "benefits": "50% improvement in learning outcomes, 24/7 accessibility, engaging content",
+    "clients": "500+ schools, 200,000+ students, 15,000+ teachers",
+    "caseStudy": "School Network - 100 schools, 50,000 students, 80% parent engagement increase"
+  }
+]
